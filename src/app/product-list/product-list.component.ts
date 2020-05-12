@@ -1,24 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from "@angular/core";
 
-import { products } from '../products';
+import { products } from "../products";
+import { ProductAlertComponent } from "../product-alert/product-alert.component";
 
 @Component({
-  selector: 'app-product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  selector: "app-product-list",
+  templateUrl: "./product-list.component.html",
+  styleUrls: ["./product-list.component.css"]
 })
 export class ProductListComponent {
+  @ViewChild("productAlert") productAlert: ProductAlertComponent;
   products = products;
 
   share() {
-    window.alert('The product has been shared!');
+    window.alert("The product has been shared!");
   }
 
   onNotify() {
-    window.alert('You are notified by system!');
+    window.alert("You are notified by system!");
+    this.productAlert.show();
   }
 }
-
 
 /*
 Copyright Google LLC. All Rights Reserved.

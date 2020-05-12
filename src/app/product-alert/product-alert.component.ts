@@ -10,7 +10,10 @@ export class ProductAlertComponent implements OnInit {
   @Output() notify = new EventEmitter();
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  show() {
+    console.warn('The product', this.product);
   }
 
 }
